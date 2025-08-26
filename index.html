@@ -7,19 +7,59 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <!-- tailwind cdn -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Hind Madurai google font -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+     <!-- inter font -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <!-- font awesome cdn -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>Emergency Hotline</title>
 </head>
+
+<!-- font-family: "Hind Madurai", sans-serif; -->
+ <!--  font-family: "Inter", sans-serif; -->
 <body>
     <header>
+<!-- Navbar Section -->
+        <nav class="w-full py-6 flex flex-col gap-4 lg:flex-row justify-between items-center pl-7 lg:pl-15 font-[Inter]">
+            <div class="nav-left w-1/2 flex items-center gap-2.5 ">
+                <img class="w-[50px] h-[50px]" src="./assets/logo.png" alt=""> 
+                <span class="text-[#006747] font-extrabold text-2xl">Emergency <br> Service</span> 
+                
+            </div>
+        <div class="nav-right w-1/2 flex items-center justify-center lg:justify-end gap-3 lg:gap-5 pr-5 lg:pr-[61px]">
+            <p class="flex items-center justify-center py-[14px] px-9 gap-2.5 rounded-[50px] bg-[#41ff6b1a]">
+                <span class="text-black font-bold lg:font-extrabold">0</span>
+                <img class="w-7 h-7" src="./assets/heart.png" alt="">
+            </p>
+            <p class="flex items-center justify-center rounded-[50px] py-[14px] px-5 gap-2.5 bg-[#41ff6b1a]">
+                <span class="text-black font-bold lg:font-extrabold">100</span>
+                <img class="w-6 h-6" src="./assets/coin.png" alt="">
+            </p>
+            <p class="text-white flex items-center justify-center gap-2 font-medium lg:font-semibold py-[14px] px-7 lg:px-9 rounded-[50px] bg-[#00A63E]">
+                <span>2</span> Copy</p>
+
+        </div>
+        </nav>
+<!-- banner section -->
+        <section class="banner font-[Hind_Madurai] w-full text-center bg-gradient-to-r from-[#013223] via-[#006747] to-[#013223] py-5 px-2 ">
+            <img class="w-24 h-24 mx-auto" src="./assets/logo.png" alt="Logo">
+            <h1 class="text-white font-bold text-[40px] my-3">Emergency Service Directory</h1>
+            <p class="text-white font-semibold text-xl">Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh</p>
+        </section>
 
     </header>
 
-    <main>
-       
+    <main class="bg-[#41ff6b1a] w-full h-[100vh]">
+        <section class="main px-[60px] mt-12  mx-auto h-[600px] border-2 border-red-500">
 
+        </section>
+    
     </main>
 
     <script src="./js/index.js"></script>
