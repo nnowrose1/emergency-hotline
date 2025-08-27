@@ -1,4 +1,6 @@
 // console.log("JS file Connected");
+
+const callHistory = [];
 // Reusable functions
 function numberOfCoins(){
     const coins = (document.getElementById("number-of-coins")).innerText;
@@ -18,22 +20,28 @@ function numberOfHearts(){
     
 }
 
- function getServiceName(id){
-    const serviceName = document.getElementById(id).innerText;
-    console.log(serviceName);
- }
+ function getServiceName(id){}
+    // const serviceNames = document.getElementsByClassName("service-name");
+    // for(const serviceName of serviceNames){
+    // console.log(serviceName.innerText);
+    // }
+ 
     
   
    
-    
-
-
-
-
 
 const calls = document.getElementsByClassName('call');
+
 for(const call of calls){
     call.addEventListener('click', function(){
+    
+     const serviceName= call.parentNode.parentNode.childNodes[5].innerText;
+     const serviceNumber = call.parentNode.parentNode.childNodes[7].innerText;
+     const mainServiceName = call.parentNode.parentNode.childNodes[3].innerText
+    //   console.log(mainServiceName);
+     
+       alert("Calling"+ " " + serviceName + " " + serviceNumber + "...");
+  
         const currentCoins = numberOfCoins();
         // console.log(currentCoins);
          if(currentCoins < 20){
@@ -44,9 +52,34 @@ for(const call of calls){
         const finalCoins = currentCoins - 20;
                
         document.getElementById("number-of-coins").innerText = finalCoins;
+        const history = {
+            name: mainServiceName,
+            number: serviceNumber,
+            date: new Date().toLocaleTimeString()
+        }
+        callHistory.push(history);
+
+        const callHistoryContainer = document.getElementById("call-history-container");
+        const div = document.createElement("div");
+        div.innerHTML = `
+            <div class="w-full mb-2 lg:max-w-[300px] p-2 bg-gray-100 rounded-lg flex items-center justify-between">
+                 <div>
+                 <h2 class="font-bold text-[18px] text-[#111111]">${history.name}</h2>
+                 <p class="text-[18px] text-[#5C5C5C]">${history.number}</p>
+                 </div>
+                 <span class="text-[18px]">${history.date}</span>
+            </div>
+        `
+
+        callHistoryContainer.appendChild(div);
+    document.getElementById('clear').addEventListener('click', function(){
+    callHistoryContainer.innerText = '';
+})
 
     })
 }
+
+
 
 const copys = document.getElementsByClassName('copy');
 for(const copy of copys){
