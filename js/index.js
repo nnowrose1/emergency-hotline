@@ -34,6 +34,15 @@ const calls = document.getElementsByClassName('call');
 
 for(const call of calls){
     call.addEventListener('click', function(){
+
+         const currentCoins = numberOfCoins();
+        // console.log(currentCoins);
+         if(currentCoins < 20){
+            alert('You do not have sufficient coins');
+            return;
+        }
+        const finalCoins = currentCoins - 20;      
+        document.getElementById("number-of-coins").innerText = finalCoins;
     
      const serviceName= call.parentNode.parentNode.childNodes[5].innerText;
      const serviceNumber = call.parentNode.parentNode.childNodes[7].innerText;
@@ -42,16 +51,6 @@ for(const call of calls){
      
        alert("Calling"+ " " + serviceName + " " + serviceNumber + "...");
   
-        const currentCoins = numberOfCoins();
-        // console.log(currentCoins);
-         if(currentCoins < 20){
-            alert('You do not have sufficient coins');
-            return;
-        }
-
-        const finalCoins = currentCoins - 20;
-               
-        document.getElementById("number-of-coins").innerText = finalCoins;
         const history = {
             name: mainServiceName,
             number: serviceNumber,
@@ -62,12 +61,12 @@ for(const call of calls){
         const callHistoryContainer = document.getElementById("call-history-container");
         const div = document.createElement("div");
         div.innerHTML = `
-            <div class="w-full mb-2 lg:max-w-[300px] p-2 bg-gray-100 rounded-lg flex items-center justify-between">
+            <div class="w-full mb-2 lg:max-w-[350px] p-2 bg-gray-100 rounded-lg flex items-center justify-between">
                  <div>
                  <h2 class="font-bold text-[18px] text-[#111111]">${history.name}</h2>
                  <p class="text-[18px] text-[#5C5C5C]">${history.number}</p>
                  </div>
-                 <span class="text-[18px]">${history.date}</span>
+                 <p class="text-[18px]">${history.date}</p>
             </div>
         `
 
@@ -83,8 +82,13 @@ for(const call of calls){
 
 const copys = document.getElementsByClassName('copy');
 for(const copy of copys){
-    copy.addEventListener('click', function(){
-        alert("Copied the Number");
+    copy.addEventListener('click', async() =>{
+        alert("Content copied to Clipboard!");
+        const textToCopy = copy.parentNode.parentNode.childNodes[7].innerText;
+        console.log(textToCopy);
+        await navigator.clipboard.writeText(textToCopy);
+    
+     
         const currentNumberOfCopys = numberOfCopy();
         // console.log(currentCoins);
         const finalCopys = currentNumberOfCopys + 1;
