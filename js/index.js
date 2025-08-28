@@ -63,7 +63,7 @@ for(const call of calls){
         div.innerHTML = `
             <div class="w-full mb-2 lg:max-w-[350px] p-2 bg-gray-100 rounded-lg flex items-center justify-between">
                  <div>
-                 <h2 class="font-bold text-[18px] text-[#111111]">${history.name}</h2>
+                 <h2 class="font-bold font-[Hind-Madurai] text-[18px] text-[#111111]">${history.name}</h2>
                  <p class="text-[18px] text-[#5C5C5C]">${history.number}</p>
                  </div>
                  <p class="text-[18px]">${history.date}</p>

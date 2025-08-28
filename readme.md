@@ -1,165 +1,31 @@
-## WELCOME TO ( সহজ সরল সিম্পল ) ASSIGNMENT-005
-
-### 📅 Deadline For 60 marks: 29th August, 2025 (11:59 pm ⏱️)
-
-### 📅 No Deadline For 50 marks
-
-### 📅 Deadline For 30 marks: Any time after 29th August.
-
----
-
-## ✅ Main Requirements (50 Marks)
-
-### 1. Navbar
-
-- **Website name & logo** on the left as Figma
-- **Heart icon, coin count (default-100), and Copy Count** on the right as Figma
-
----
-
-### 2. Hero Section
-
-- **Background Gradient** in the Whole Section
-- **A Relevant Logo** at the top-center
-- **Section Title** in the center
-- **A Relevant Slogan** in the bottom Center
-
----
-
-### 2. Main Section
-
-This Section will have layout as figma
-
-<table border=1 width="100%" cellpadding="50">
-<tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
- </tr>
- <tr>
-    <td colspan=9 >Card Section</td>
-    <td colspan=3>History Section</td>
- </tr>
-</table>
-
-### Emergency Hotline Section
-
-- **Show Minimum 6 cards**. Each card will contain:
-  - Icon or Image
-  - Relevant Name
-  - Relevant Name in English
-  - Hotline number for calling
-  - Category Badge
-  - 💗 icon at left
-  - **2 buttons** at the bottom: Copy and Call with icons as Figma
-
-### History Section
-
-- **A white Background** in the whole section
-- **History Title with icon** at the top-left as Figma
-- **Clear History Button** at the top-right as Figma
-
----
-
-### 3. Responsiveness (5 Marks)
-
-- Website should be fully **responsive for mobile devices** (implementation up to you)
-
----
-
-## Functionalities
-
-### 4. Heart Icons
-
-- Clicking on the 💗 **heart icon** of any card will increase the count in the Navbar
-
----
-
-### 5. Call Buttons
-
-- On clicking a card's **Call Button**, following actions will happen:
-  - Show an **alert** with a message including the service name and number
-  - Each call will **cut 20 coins**. Reduce Coin after each click.
-  - If coins are less than 20, show a relevant alert and terminate the process.
-  - Add this service into the **Call History section** with:
-    - Service name
-    - Service number
-
----
-
-### 5. Call History Section
-
-- Show all called services with name & number. This will empty initially. when call button clicked it will filled dynamically.
-- A **Clear History button** on the right
-- Clicking this button will remove all data from call history
-
----
-
-## Create Readme
-
-You have to create a `Readme.md` file. and write down following questions. Dont Try to copy paste from AI Tools. Just write what you know about these. If you don't know , then search , learn , understand and then write.
-
-### 6. Answer the following questions clearly:
-
 1. What is the difference between **getElementById, getElementsByClassName, and querySelector / querySelectorAll**?
+
+Answer: We can use **getElementById, getElementsByClassName, and querySelector / querySelectorAll** to get a particular html element or some elements from the DOM. By using getElementByID and querySelector, we can get a single html element whereas getElementsByClassName and querySelectorAll returns multiple elements having same class name. if we want to get a particular html element with a unique id name, we use getElementByID. It returns null if there is no such element with the mentioned id name. If we want to get multiple html elements having same class name, we use getElementsByClassName and it returns a HTMLCollections[] array like object which is live meaning it updates automatically if any changes happen in DOM. It returns an empty array if there is no such class name. By using querySelectorAll, we can get multiple elements having same class name, the difference is we use CSS selectors to get the html elements. Any valid CSS selector can be used. It is particularly helpful for complex cases to  It returns a nodelist which is also an array like object but unlike HTMLCollection, it is not live. querySelectorAll returns the first element that matches the css selector search whereas querySelectorAll returns all the matches.
+
 2. How do you **create and insert a new element into the DOM**?
+
+There are 3 steps to create and insert a new element into the DOM:
+1. The element needs to be created using document.createElement() method and the innerText or  innerHTML needs to be set.
+For example if I want to create a new paragraph,
+const p = document.createElement('p');
+p.innerText = "This is a new paragraph";
+2. Then we need to get the parent node where the new element will be added. To get the parent node, we need to provide the parent node with an id and get the parent node using getElementById.
+const parentContainer = document.getElementById("parent-container");
+3. Finally the newly created element needs to be appended to the parent node.
+parentContainer.appendChild(p);
+Thus a new paragraph element has been created with JS and has been inserted into the DOM as the last child of the parent element.
+
 3. What is **Event Bubbling** and how does it work?
+
+When an event is triggered at its target element, The event handler attached to this target element responds first. It then propagates upwards and if there is any event handler attached to its parent element, it then responds. The event then bubbles further upwards to the grand-parent element and great-grand-parent elements and so on, and event handler associated with all those elements respond to this event. It continues to propagate upwards until it reaches the root element.
+
 4. What is **Event Delegation** in JavaScript? Why is it useful?
+
+Event delegation is a technique where a event listener is added to the parent element in stead of child elements to manage the events triggered by the child elements.
+1. Event delegation is particularly helpful to handle dynamic elements. As the event handler is added to the parent element, it can automatically handle the newly added children to the DOM.
+2. Delegating the event makes the code simplified and makes maintenance easier.
+3. Event delegation also improves the performance and processing time as a single event handler is used to the parent in stead of adding multiple event handlers to multiple children. It is particularly helpful while dealing with a large number of elements.
+
 5. What is the difference between **preventDefault() and stopPropagation()** methods?
-
----
-
-## 🧪 Challenges Part (10 Marks)
-
-- On clicking the **Copy button**, show an alert and **increase the copy count** (3 Marks)
-
-- Hotline number will be **copied on click** so it can be pasted anywhere (4 Marks)
-
-💡Hint: You can ask for Help from `ChatGPT` Mamma . Just copy the below prompt , generate answer. use it with your own way.
-
-```bash
-I have a card with some text and a button inside it. I want that when a user clicks the button, some specific text from the card is copied to the clipboard using JavaScript. Please provide the code and explain it step by step.
-```
-
-- After clicking on the **Call button**, the **exact time of the call** will be shown in the Call History section (3 Marks)
-
-💡Hint: Search Google with that below question
-
-```bash
-How to get current local time in js
-```
-
----
-
-## ⚙️ Technology Stack
-
-- HTML
-- CSS ( Vanilla , Tailwind CSS , DaisyUI , Others - wheatever you like )
-- JavaScript ( Vanilla only. No Framework / Library Allowed )
-
----
-
-## 📌 Rules
-
-- ✅ Minimum **5 meaningful commits** required
-- ❌ No Lorem Ipsum or dummy placeholder text. Use **relevant content only**
-
----
-
-## 🔗 What to Submit
-
-- 📂 **GitHub Repository**
-- 🌐 **Live Link**
-
----
-
-# Let's Code and Achieve your Dream 🎯
+ stopPropagation() method is used to stop the event from bubbling upwards to the parent element.
+ preventDefault() method is used to prevent occuring the default behaviour or action associated with an event.
