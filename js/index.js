@@ -19,17 +19,7 @@ function numberOfHearts(){
     return heartNumber;
     
 }
-
- function getServiceName(id){}
-    // const serviceNames = document.getElementsByClassName("service-name");
-    // for(const serviceName of serviceNames){
-    // console.log(serviceName.innerText);
-    // }
- 
-    
-  
    
-
 const calls = document.getElementsByClassName('call');
 
 for(const call of calls){
@@ -38,7 +28,7 @@ for(const call of calls){
          const currentCoins = numberOfCoins();
         // console.log(currentCoins);
          if(currentCoins < 20){
-            alert('You do not have sufficient coins');
+            alert('❌You do not have sufficient coins');
             return;
         }
         const finalCoins = currentCoins - 20;      
@@ -49,7 +39,7 @@ for(const call of calls){
      const mainServiceName = call.parentNode.parentNode.childNodes[3].innerText
     //   console.log(mainServiceName);
      
-       alert("Calling"+ " " + serviceName + " " + serviceNumber + "...");
+       alert("📞Calling"+ " " + serviceName + " " + serviceNumber + "...");
   
         const history = {
             name: mainServiceName,
@@ -66,7 +56,7 @@ for(const call of calls){
                  <h2 class="font-bold text-[18px] text-[#111111]">${history.name}</h2>
                  <p class="text-[18px] text-[#5C5C5C]">${history.number}</p>
                  </div>
-                 <p class="text-[18px]">${history.date}</p>
+                 <p class="text-[18px] whitespace-nowrap">${history.date}</p>
             </div>
         `
 
